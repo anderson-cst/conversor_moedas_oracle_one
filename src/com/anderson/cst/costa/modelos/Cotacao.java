@@ -5,11 +5,15 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Map;
 
 
-public class Conversao {
+public class Cotacao {
     @SerializedName("conversion_rates")
     private Map<String, Double> taxaConv;
 
-    public Conversao() {
+    public Cotacao() {
+        this.taxaConv = taxaConv;
+    }
+
+    public Cotacao(Cotacao cotacao) {
         this.taxaConv = taxaConv;
     }
 
@@ -26,8 +30,12 @@ public class Conversao {
     }
 
     public void imprimirTodos() {
-        for (Map.Entry<String, Double> entry : taxaConv.entrySet()) {
-            System.out.println("Código da Moeda: " + entry.getKey() + ", Valor da cotação atual: " + entry.getValue());
+        if (taxaConv != null && !taxaConv.isEmpty()) {
+            for (Map.Entry<String, Double> entry : taxaConv.entrySet()) {
+                System.out.println("Código da Moeda: " + entry.getKey() + ", Valor da cotação atual: " + entry.getValue());
+            }
+        } else {
+            System.out.println("O mapa de taxas de conversão está vazio ou nulo.");
         }
     }
 
