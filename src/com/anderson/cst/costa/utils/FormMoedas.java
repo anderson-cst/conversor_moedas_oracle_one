@@ -8,9 +8,7 @@ public class FormMoedas {
 
     public static String usdFomatFunc(double moeda) {
         DecimalFormatSymbols cifrUSD = new DecimalFormatSymbols(new Locale("en", "USD"));
-        DecimalFormat usdFormat = new DecimalFormat("USD$ #,#######0.00", cifrUSD);
-        cifrUSD.setCurrencySymbol("USD$");
-        cifrUSD.setGroupingSeparator('.');
+        DecimalFormat usdFormat = new DecimalFormat("USD$ #,#######0.000000", cifrUSD);
         return usdFormat.format(moeda);
     }
 
@@ -24,5 +22,11 @@ public class FormMoedas {
         DecimalFormatSymbols cifrBRL = new DecimalFormatSymbols(new Locale("pt", "BRL"));
         DecimalFormat brlFormat = new DecimalFormat("R$ #,#######0.00", cifrBRL);
         return brlFormat.format(moeda);
+    }
+
+    public static String copFomatFunc(double moeda) {
+        DecimalFormatSymbols cifrCOP = new DecimalFormatSymbols(new Locale("es", "COP"));
+        DecimalFormat copFormat = new DecimalFormat("COP$ #,#######0.00", cifrCOP);
+        return copFormat.format(moeda);
     }
 }

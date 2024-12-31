@@ -11,16 +11,18 @@ public class Main {
         String opc="";
 
             while (!opc.equalsIgnoreCase("7")){
+                String moedaConv;
+                String moedaRef;
+                double vlrConver;
+                OpcMenu opcMenu = new OpcMenu();
+
                 System.out.println("\n*********************************************" +
                         "\n\nEscolha uma opção do menu para conversão: " +
                         "\n1) Dólar => Peso Argentino \n2) Peso Argetino => Dólar\n3) Dólar => Real Brasileiro" +
                         "\n4) Real Brasileiro => Dólar\n5) Dólar => Peso Colombiano\n6) Peso Colombiano => Dólar\n7) sair" +
                         "\nEscolha uma opçõa válida");
                 opc = ler.nextLine();
-                String moedaConv;
-                String moedaRef;
-                double vlrConver;
-                OpcMenu opcMenu = new OpcMenu();
+
                 switch (opc) {
                         case "1":
                         moedaConv = "ARS";
@@ -44,17 +46,30 @@ public class Main {
                         opcMenu.opcTres(vlrConver, moedaConv, moedaRef);
                         break;
                     case "4":
-                        System.out.println("Quarta-feira");
+                        moedaConv = "USD";
+                        moedaRef = "BRL";
+                        System.out.println("\nDigite o valor para conversão:");
+                        vlrConver = Double.parseDouble(ler.nextLine());
+                        opcMenu.opcQuatro(vlrConver, moedaConv, moedaRef);
                         break;
                     case "5":
-                        System.out.println("Quinta-feira");
+                        moedaConv = "COP";
+                        moedaRef = "USD";
+                        System.out.println("\nDigite o valor para conversão:");
+                        vlrConver = Double.parseDouble(ler.nextLine());
+                        opcMenu.opcCinco(vlrConver, moedaConv, moedaRef);
                         break;
-                    case "6": System.out.println("Sexta-feira");
+                    case "6":
+                        moedaConv = "USD";
+                        moedaRef = "COP";
+                        System.out.println("\nDigite o valor para conversão:");
+                        vlrConver = Double.parseDouble(ler.nextLine());
+                        opcMenu.opcSeis(vlrConver, moedaConv, moedaRef);
                         break;
                     case "7": System.out.println("Saindo...");
                         break;
                     default:
-                        System.out.println("Dia inválido");
+                        System.out.println("Opção inválido");
                         break;
                     }
             }

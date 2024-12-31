@@ -37,4 +37,43 @@ public class OpcMenu {
         System.out.println(FormMoedas.brlFomatFunc(vlrConver) + " Reais convertidos para Dólares são "
                 + FormMoedas.usdFomatFunc(respConver));
     }
+
+    public void opcQuatro(double vlrConver, String moedaConv, String moedaRef) {
+        double respConver;
+        double moedaVlrAtual;
+        moedaVlrAtual = Consumo.consomeAPI(moedaRef).obterCotacaoId(moedaConv);
+        respConver = vlrConver * moedaVlrAtual;
+        System.out.println(moedaVlrAtual);
+        System.out.println(Consumo.consomeAPI(moedaRef));
+        System.out.println("1 Real equivale à "
+                + FormMoedas.usdFomatFunc(Consumo.consomeAPI(moedaRef).obterCotacaoId(moedaConv)) + " Dólar");
+        System.out.println(FormMoedas.usdFomatFunc(vlrConver) + " Dólares convertidos para Reais são "
+                + FormMoedas.brlFomatFunc(respConver));
+    }
+
+    public void opcCinco(double vlrConver, String moedaConv, String moedaRef) {
+        double respConver;
+        double moedaVlrAtual;
+        moedaVlrAtual = Consumo.consomeAPI(moedaRef).obterCotacaoId(moedaConv);
+        respConver = vlrConver * moedaVlrAtual;
+        System.out.println(moedaVlrAtual);
+        System.out.println(Consumo.consomeAPI(moedaRef));
+        System.out.println("1 Peso Colombiano equivale à "
+                + FormMoedas.usdFomatFunc(Consumo.consomeAPI(moedaRef).obterCotacaoId(moedaConv)) + " Dólar");
+        System.out.println(FormMoedas.usdFomatFunc(vlrConver) + " Dólares convertidos para Pesos Colombianos são "
+                + FormMoedas.copFomatFunc(respConver));
+    }
+
+    public void opcSeis(double vlrConver, String moedaConv, String moedaRef) {
+        double respConver;
+        double moedaVlrAtual;
+        moedaVlrAtual = Consumo.consomeAPI(moedaRef).obterCotacaoId(moedaConv);
+        respConver = vlrConver * moedaVlrAtual;
+        System.out.println(FormMoedas.usdFomatFunc(moedaVlrAtual));
+        System.out.println(Consumo.consomeAPI(moedaRef));
+        System.out.println("1 Dólar equivale à "
+                + FormMoedas.copFomatFunc(Consumo.consomeAPI(moedaRef).obterCotacaoId(moedaConv)) + " Peso Colombiano");
+        System.out.println(FormMoedas.copFomatFunc(vlrConver) + " Pesos Colombianos convertidos para Dólares são "
+                + FormMoedas.usdFomatFunc(respConver));
+    }
 }
