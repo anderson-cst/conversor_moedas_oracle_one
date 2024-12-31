@@ -8,7 +8,7 @@ public class FormMoedas {
 
     public static String usdFomatFunc(double moeda) {
         DecimalFormatSymbols cifrUSD = new DecimalFormatSymbols(new Locale("en", "USD"));
-        DecimalFormat usdFormat = new DecimalFormat("USD$ #,#######0.000000", cifrUSD);
+        DecimalFormat usdFormat = new DecimalFormat("USD$ #,#######0.00", cifrUSD);
         return usdFormat.format(moeda);
     }
 

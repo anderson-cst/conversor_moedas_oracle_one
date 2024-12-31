@@ -10,14 +10,11 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class Consumo {
-    static String api_key = "d7916f9027b21922a20f5449";
-/*    static String valConv = "USD";*/
-
 
     public static Cotacao consomeAPI(String valConv) {
         Cotacao cotac = new Cotacao();
         try {
-            String endereco = "https://v6.exchangerate-api.com/v6/"+api_key+"/latest/"+valConv;
+            String endereco = "https://v6.exchangerate-api.com/v6/"+ System.getenv("EXCHANGE_API_KEY") +"/latest/"+valConv;
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest req = HttpRequest.newBuilder()
                     .uri(URI.create(endereco))
