@@ -25,43 +25,43 @@ public class Main {
 
                 switch (opc) {
                         case "1":
-                        moedaConv = "ARS";
                         moedaRef = "USD";
+                        moedaConv = "ARS";
                         System.out.println("\nDigite o valor para conversão:");
                         vlrConver = Double.parseDouble(ler.nextLine());
                         opcMenu.opcUm(vlrConver, moedaConv, moedaRef);
                     break;
                     case "2":
-                        moedaConv = "USD";
                         moedaRef = "ARS";
+                        moedaConv = "USD";
                         System.out.println("\nDigite o valor para conversão:");
                         vlrConver = Double.parseDouble(ler.nextLine());
                         opcMenu.opcDois(vlrConver, moedaConv, moedaRef);
                     break;
                     case "3":
-                        moedaConv = "BRL";
                         moedaRef = "USD";
+                        moedaConv = "BRL";
                         System.out.println("\nDigite o valor para conversão:");
                         vlrConver = Double.parseDouble(ler.nextLine());
                         opcMenu.opcTres(vlrConver, moedaConv, moedaRef);
                         break;
                     case "4":
-                        moedaConv = "USD";
                         moedaRef = "BRL";
+                        moedaConv = "USD";
                         System.out.println("\nDigite o valor para conversão:");
                         vlrConver = Double.parseDouble(ler.nextLine());
                         opcMenu.opcQuatro(vlrConver, moedaConv, moedaRef);
                         break;
                     case "5":
-                        moedaConv = "COP";
                         moedaRef = "USD";
+                        moedaConv = "COP";
                         System.out.println("\nDigite o valor para conversão:");
                         vlrConver = Double.parseDouble(ler.nextLine());
                         opcMenu.opcCinco(vlrConver, moedaConv, moedaRef);
                         break;
                     case "6":
-                        moedaConv = "USD";
                         moedaRef = "COP";
+                        moedaConv = "USD";
                         System.out.println("\nDigite o valor para conversão:");
                         vlrConver = Double.parseDouble(ler.nextLine());
                         opcMenu.opcSeis(vlrConver, moedaConv, moedaRef);
